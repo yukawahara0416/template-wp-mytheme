@@ -5,16 +5,10 @@
   <?php get_header(); ?>
 </head>
 
-<<<<<<< HEAD
 <body>
   <header>
     <?php get_template_part(('template-parts/header/header')); ?>
   </header>
-=======
-<body <?php body_class(); ?>>
-
-  <?php get_template_part(('template-parts/header/header')); ?>
->>>>>>> origin/master
 
   <section>
     <h1><?php the_archive_title(); ?>一覧</h1>
@@ -37,20 +31,12 @@
     </div>
   </section>
 
-<<<<<<< HEAD
   <footer>
     <?php get_template_part('template-parts/footer/footer'); ?>
   </footer>
-=======
-  <?php get_template_part('template-parts/footer/footer'); ?>
->>>>>>> origin/master
 
   <?php get_footer(); ?>
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> origin/master
