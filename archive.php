@@ -22,7 +22,7 @@
           <?php get_template_part('template-parts/content/content-excerpt', get_post_type()); ?>
         <?php endwhile; ?>
 
-        <?php pagination($wp_query->max_num_pages, get_query_var('paged')); ?>
+        <?php _pagination($wp_query->max_num_pages, get_query_var('paged')); ?>
 
       <?php else : ?>
         <?php get_template_part('template-parts/content/content-none'); ?>

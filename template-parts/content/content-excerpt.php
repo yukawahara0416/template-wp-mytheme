@@ -8,7 +8,7 @@
   </figure>
 
   <header>
-    <?php if (function_exists('show_category')) show_category(); ?>
+    <?php if (function_exists('_show_category')) _show_category(); ?>
     <h2><a href="<?php echo esc_url(get_permalink()); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
   </header>
 
@@ -21,7 +21,7 @@
   </div>
 
   <div>
-    <?php if (function_exists('_set_new_days_ago')) _set_new_days_ago(7); ?>
+    <?php if (function_exists('_new_mark')) _new_mark(7); ?>
   </div>
 
   <footer></footer>

@@ -5,7 +5,7 @@
  * @param integer $days New!を表示させる日数。引数を指定しない場合は7。
  */
 
-function _set_new_days_ago($days = 7) {
+function _new_mark($days = 7) {
   $post_time = get_the_time('U');
   $last = time() - ($days * 24 * 60 * 60);
   if ($post_time > $last) {

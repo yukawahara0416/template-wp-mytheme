@@ -9,7 +9,7 @@
  * @return boolean|string カテゴリが存在しない場合はfalseを返し、カテゴリが存在する場合はHTMLまたはstringを返します。
  */
 
-function show_category($term = 'name', $html = true, $link = false, $delimiter = null) {
+function _show_category($term = 'name', $html = true, $link = false, $delimiter = null) {
   $cats = get_the_category();
   $tmp = $cats;
 

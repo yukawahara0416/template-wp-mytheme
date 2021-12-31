@@ -9,7 +9,7 @@
  * @param boolean $show_only 1ページしかない時に表示するかどうか。引数を指定しない場合は表示しない。
  */
 
-function pagination($pages, $paged, $range = 99, $show_only = true) {
+function _pagination($pages, $paged, $range = 99, $show_only = true) {
   $pages = (int) $pages;    // 明示的にint型へ
   $paged = $paged ?: 1;       // get_query_var('paged')をそのまま投げても大丈夫なように
 ?>

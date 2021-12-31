@@ -1,7 +1,7 @@
 <?php
 
 // MW WP Form のkey番号
-$key = '';
+$key = '25';
 
 // MW WP Form バリデーションエラー
 add_filter('mwform_error_message_mw-wp-form-' . $hoge, 'my_error_message', 10, 3);

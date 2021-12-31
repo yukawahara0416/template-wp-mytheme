@@ -20,7 +20,7 @@ Template Post Type: post
   <article>
     <h1><?php the_title(); ?></h1>
 
-    <?php show_category($term = 'slug', $html = true, $link = false); ?>
+    <?php _show_category($term = 'slug', $html = true, $link = false); ?>
 
     <?php $img = _get_eyecatch_with_default(); ?>
 

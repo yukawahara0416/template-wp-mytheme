@@ -6,8 +6,8 @@
  * https://www.nxworld.net/wp-default-taxonomy-select.html
  */
 
-function add_default_term_setting_item()
-{
+add_action('load-options-writing.php', 'add_default_term_setting_item');
+function add_default_term_setting_item() {
   $post_types = get_post_types(array('public' => true, 'show_ui' => true), false);
   if ($post_types) {
     foreach ($post_types as $post_type_slug => $post_type) {
@@ -22,10 +22,8 @@ function add_default_term_setting_item()
     }
   }
 }
-add_action('load-options-writing.php', 'add_default_term_setting_item');
 
-function default_term_setting_field($args)
-{
+function default_term_setting_field($args) {
   $option_name = $args['post_type'] . '_default_' . $args['taxonomy']->name;
   $default_term = get_option($option_name);
   $terms = get_terms($args['taxonomy']->name, 'hide_empty=0');
@@ -45,8 +43,8 @@ function default_term_setting_field($args)
   endif;
 }
 
-function allow_default_term_setting($whitelist_options)
-{
+add_filter('whitelist_options', 'allow_default_term_setting');
+function allow_default_term_setting($whitelist_options) {
   $post_types = get_post_types(array('public' => true, 'show_ui' => true), false);
   if ($post_types) {
     foreach ($post_types as $post_type_slug => $post_type) {
@@ -62,10 +60,9 @@ function allow_default_term_setting($whitelist_options)
   }
   return $whitelist_options;
 }
-add_filter('whitelist_options', 'allow_default_term_setting');
 
-function add_post_type_default_term($post_id, $post)
-{
+add_action('wp_insert_post', 'add_post_type_default_term', 10, 2);
+function add_post_type_default_term($post_id, $post) {
   if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || $post->post_status == 'auto-draft') {
     return;
   }
@@ -89,4 +86,3 @@ function add_post_type_default_term($post_id, $post)
     }
   }
 }
-add_action('wp_insert_post', 'add_post_type_default_term', 10, 2);
