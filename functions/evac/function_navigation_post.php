@@ -8,38 +8,26 @@
 function _navigation_post() {
 ?>
   <nav class="PageBute EntryBute">
-
     <!-- 前の記事 -->
     <?php if (get_previous_post()) : ?>
-
       <div class="Left">
         <?php previous_post_link('%link', '<i class="fas fa-chevron-left"></i>'); ?>
       </div>
-
     <?php else : ?>
-
       <div></div>
-
     <?php endif; ?>
-
     <!-- 次の記事 -->
     <?php if (get_next_post()) : ?>
-
       <div class="Right">
         <?php next_post_link('%link', '<i class="fas fa-chevron-right"></i>'); ?>
       </div>
-
     <?php else : ?>
-
       <div></div>
-
     <?php endif; ?>
-
   </nav>
 <?php
 }
 ?>
-
 <?php
 /**
  * 前後の月をナビゲーション

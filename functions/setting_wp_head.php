@@ -4,9 +4,21 @@
  * head内のタグを制御します
  */
 
+// wp_head()からjQueryを削除します
+// jQueryを使用したい場合は、テンプレートから任意に読み込んでください
+add_filter('wp_default_scripts', function ($scripts) {
+  if (!is_admin()) {
+    $scripts->remove('jquery');
+  }
+});
+
 add_action('wp_enqueue_scripts', function () {
-  // WP標準のjQueryを読み込まない
-  wp_deregister_script('jquery');
+  // WP標準のjQueryを差し替えます
+  // （「Uncaught TypeError: $ is not a function」対策）
+  if (!is_admin()) {
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+  }
   // ブロックエディタ関連
   wp_deregister_style('wp-block-library');
   wp_deregister_style('wp-block-library-theme');

@@ -4,6 +4,7 @@
 <meta name="robots" content="<?php echo _get_robots(); ?>">
 <meta name="description" content="<?php echo _get_meta('description', 100); ?>">
 <meta name="keywords" content="">
+<meta name="google-site-verification" content="">
 
 <!-- Facebook -->
 <meta property="og:title" content="<?php echo _get_meta('title'); ?>">
